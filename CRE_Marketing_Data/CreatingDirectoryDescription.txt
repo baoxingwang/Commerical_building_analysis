@@ -1,0 +1,8 @@
+## Create the following directories to store the data from google drive:
+
+
+## Create folder directory HotelOccupancyTaxData, to add RawData from googledrive:
+Project_3_Potential_Marketing\CRE_Marketing_Data\HotelOccupancyTaxData
+
+## Create folder directory formattedData, to add HoustonData zipped file from googledrive
+Project_3_Potential_Marketing\CRE_Marketing_Data\HotelOccupancyTaxData\formattedData

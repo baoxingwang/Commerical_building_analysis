@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Marketing</title>
+  <!-- Latest compiled and minified CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- Local stylesheet -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='mystyle.css') }}">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="row">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{{ url_for('home') }}" title="Home"><img src="./static/img/home.svg"
+          class="rounded" alt="Visual & Analysis" style="height:35px;width:35px;"><span class="sr-only">(current)</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('visuals') }}" title="Visuals & Analysis"><img
+                  src="./static/img/bar_chart.svg" class="rounded" alt="Visual & Analysis"
+                  style="height:40px;width:40px;"></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('predictions') }}" title="Predictions"><img
+                  src="./static/img/prediction.svg" class="rounded" alt="Predictions"
+                  style="height:45px;width:45px;"></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="https://github.com/jmitterh/Project_3_Potential_Marketing" target="_blank"
+                title="Github"><img src="./static/img/github-brands.svg" class="rounded" alt="github"
+                  style="height:35px;width:35px;"></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-12 jumbotron text-center">
+        <h1 id="head">Data Estate - Analysis</h1>
+        <hr>
+        <p>
+          <h3>Houston,TX</h3>
+        </p>
+      </div>
+
+    </div>
+
+    <!--Intro Paragraph-->
+
+    <div class="row">
+
+      <div class="col-md-6" id="intro">
+
+        <!-- Empty column -->
+        <!--<div class="card card-body bg-light">-->
+        <div class="card">
+          <div class="card-header">
+            <h4>Franchise Tax</h4>
+          </div>
+          <div class="card-body">
+            <p>
+              In the state of Texas, franchise tax is considered to be a "privilege" tax, which is a tax that is imposed
+              on companies chartered in Texas or doing business in Texas.
+              It is typically based on a company's net worth, rather than on annual taxable income. <br>
+              Any “legal entity” that does business in Texas or that is chartered in Texas must pay a franchise tax.
+              This includes: <br>
+              - corporations <br>
+              - limited liability companies (LLCs) <br>
+              - banks and savings and loan associations <br>
+              - partnerships (general, limited and limited liability)<br>
+              - trusts <br>
+              - professional and business associations <br>
+              - joint ventures <br>
+              - other entities doing business in Texas <br>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6" id="ml">
+
+        <div class="card">
+          <div class="card-header">
+            <h4>Machine Learning</h4>
+          </div>
+          <div class="card-body">
+            <p>
+              We used machine learning to forecast the companies that file for franchise tax permit. Companies that
+              file for this permit are potential canidates for commercial real-estate offices.
+              Our forecast predicts the amount of new companies created per month, and per zipcode in the Houston
+              area.<br><br>
+              For our project we are demonstrating the top 10 zipcodes with the highest amount of new companies for the
+              year of 2020 and 2021 per month.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-12" id="descritpion">
+
+        <div class="card">
+          <div class="card-header">
+            <h4>ML Process Description</h4>
+          </div>
+          <div class="card-body">
+            <p>
+              The data we found has consistent timeline. ARIMA (auto regressive integrated moving average) is a class of 
+              models that discribes a given time series based on its own past values; that is, its own lags and the lagged 
+              forecast errors, so that the equation can be used to forecast future values.<br><br>
+              For our project we used usual ARIMA, auto ARIMA, SARIMA (seasonal ARIMA), and SARIMAX (SARIMA with seasonal_index)
+              4 models to complet a full processing to get the final prediction results.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h4>Historical-Output</h4>
+      </div>
+    </div>
+    <!-- row 1 -->
+    <div class="row">
+      <div class="col-md-3">
+
+        <img class="myImg" src="{{ url_for('static', filename='model_process/seasonal_output/1_raw_data_ts.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg" src="{{ url_for('static', filename='model_process/seasonal_output/2_seasonal_t.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/seasonal_output/3_yearly_and_seasonal_trends.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/seasonal_output/4_trend_seasonal_trendANDseasonal_comparison.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+    </div>
+    <!-- row 2 -->
+    <div class="row">
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/seasonal_output/uncertainty trends.png') }}" alt="image"
+          style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/seasonal_output/ourliers with forecasting.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/seasonal_output/5_stationary_tests.png') }}" alt="image"
+          style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/seasonal_output/7_multiplicative_ts_decomposed_components.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+
+    </div>
+    <!-- row 3 -->
+    <div class="row">
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/seasonal_output/9_pacf_test_for_AR_order_p_test.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/seasonal_output/10_ts_stationary_inspection_pacf_test.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/seasonal_output/11_model1_1-1-1_summary.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/seasonal_output/12_model2_1-0-1_summary.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+
+    </div>
+    <!-- row 4 -->
+    <div class="row">
+
+      <div class="col-md-3">
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/seasonal_output/13_model3_0-1-1_summary.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg" src="{{ url_for('static', filename='model_process/seasonal_output/14_residual_error.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/seasonal_output/15_prediction_model.png') }}" alt="image"
+          style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/seasonal_output/16_forecasting_by_training_model.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+
+    </div>
+    <!-- row 5 -->
+    <div class="row">
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/seasonal_output/17_autoarima_model_summary.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/seasonal_output/18_autoARIMA_error_diagnostics.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/seasonal_output/19_autoARIMA_forecasting.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/seasonal_output/20_usual_vs_seasonal_differencing.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+    </div>
+    <!-- row 6 -->
+    <div class="row">
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/seasonal_output/21_SARIMAX_model_summary.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/seasonal_output/22_SARIMAX_error_diagnostics.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/seasonal_output/23_SARIMA_forcasting.png') }}" alt="image"
+          style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/seasonal_output/24_multiplicative_SARIMAX_model_summary.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h4>Attempts On Seasonal-Output</h4>
+      </div>
+    </div>
+    <!-- row 1 -->
+    <div class="row">
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/historical_output/ACF-test_and_1stDifferencing.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/historical_output/AR_autocorelation.png') }}" alt="image"
+          style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/historical_output/AR_autocorelation_axis.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/historical_output/ARIMA_model_1-1-0.png') }}" alt="image"
+          style="width:100%;max-width:300px">
+
+      </div>
+    </div>
+    <!-- row 2 -->
+    <div class="row">
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/historical_output/ARIMA_training1_forecast_vs_actual.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/historical_output/ARIMA_training1_summary.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/historical_output/ARIMA_training1_summary.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/historical_output/ARIMA_training2_summary.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+    </div>
+    <!-- row 3 -->
+    <div class="row">
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/historical_output/ARMA_model1_0-0-0.png') }}" alt="image"
+          style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/historical_output/ARMA_model2_1-0-0.png') }}" alt="image"
+          style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg" src="{{ url_for('static', filename='model_process/historical_output/ARMA_training.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/historical_output/ARMA_training_froecast_vs_actual.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+    </div>
+    <!-- row 4 -->
+    <div class="row">
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/historical_output/auto_SARIMAX_model_summary.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/historical_output/auto_SARIMAX_model_summary_lowerPart.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg" src="{{ url_for('static', filename='model_process/historical_output/d-value.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg" src="{{ url_for('static', filename='model_process/historical_output/final_forcast.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+    </div>
+    <!-- row 5 -->
+    <div class="row">
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/historical_output/model_accuracy_metrics.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/historical_output/numberofcompany_history.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/historical_output/PACF-1stDifferencing.png') }}" alt="image"
+          style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg" src="{{ url_for('static', filename='model_process/historical_output/PACF-test.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+    </div>
+    <!-- row 6 -->
+    <div class="row">
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/historical_output/prediction_model.png') }}" alt="image"
+          style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg" src="{{ url_for('static', filename='model_process/historical_output/residual_test.png') }}"
+          alt="image" style="width:100%;max-width:300px">
+
+      </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- The Close Button -->
+      <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+      <!-- Modal Content (The Image) -->
+      <img class="modal-content" id="img01">
+      <!-- Modal Caption (Image Text) -->
+      <div id="caption"></div>
+    </div>
+
+    <script>
+
+    </script>
+
+
+
+  <!----------- Footer ----------->
+
+  <div class="row">
+
+    <div class="col-md-12 text-center">
+      <div class="card" id="footer">
+        <div class="card-footer">
+
+          <div id="source">
+            <h3>Source Links</h3>
+            <a href="https://comptroller.texas.gov/" target="_blank">Comptroller Public Accounts</a><br>
+            <a href="https://hcad.org/" target="_blank">Harris County Appraisal District</a>
+          </div>
+          <div id="team">
+            <h3>Team Github</h3>
+            <a href="https://github.com/jmitterh" target="_blank">Jean Paul Mitterhofer</a><br>
+            <a href="https://github.com/baoxingwang" target="_blank">Baoxing Wang</a><br>
+            <a href="https://github.com/MahathiV" target="_blank">Mahathi Veluri</a><br>
+            <a href="https://github.com/42779XL" target="_blank">Xiaodi Lin</a><br>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!----------- Footer ----------->
+
+      <!-- End of container -->
+    </div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- js Reference -->
+  <script src="{{ url_for('static', filename='modalPicPopUp.js') }}"></script>
+
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+    integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+
+  </div>
+
+
+</body>
+
+</html>

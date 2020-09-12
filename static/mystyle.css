@@ -1,0 +1,206 @@
+#footer
+{
+    height:100%;
+    background-color: rosybrown;
+}
+
+#footer a
+{
+    color: white;
+}
+
+.jumbotron
+{
+
+    height: 100%;
+    background-image: url(img/rosybrown.PNG)
+};
+
+.d3_box
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#org_details /* for table scrolling*/
+{
+    position: relative;
+    height: 430px;
+    overflow: auto;
+    width: 100%;
+    display: block;
+}
+
+#org_details thead > tr > th /* styling for table header */
+   
+{
+    background-color: rosybrown;  
+    border-color:rosybrown;
+    position: sticky;  /* for fixed table header while scrolling */
+    top: 0; /* for fixed table header while scrolling */
+}
+
+#org_details tbody > tr:hover
+{
+  background-color: rosybrown; /*table rows hover color*/
+}
+
+
+ /* Style the Image Used to Trigger the Modal */
+ .myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)}
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+
+.panel
+{
+  border: black;
+}
+
+
+/* drop down styling*/
+
+#myInput {
+    box-sizing: border-box;
+    /*background-image: url(img/search_icon.png);*/
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd; 
+  }
+  
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    /*min-width: 200px;*/
+    width: 190px; /* setting drop down width*/
+    overflow-x: hidden; /* adding scrolling bar to dropdown*/
+    height: 400px; /* setting drop down height*/
+    border: 1px solid #ddd;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {background-color: rosybrown;}
+  
+  .show {display: block;}
+
+  .dropbtn
+  {
+    background-color: rosybrown;
+    border:none;
+  }
+
+  /* drop down styling*/
+
+  /* Formating footer */
+  #source {
+    float:left;
+    text-align: left;
+ 
+}
+
+#team { 
+    float:right;
+    text-align: right;
+ 
+}
+
+
+  
+
+
+
+
+  
